@@ -23,22 +23,19 @@ CREATE TABLE students
    
 DROP TABLE IF EXISTS addresses;
   
-CREATE TABLE addresses
-(
-	addressId INT UNSIGNED AUTO_INCREMENT,
-    direccion VARCHAR(100) NOT NULL,
-    ciudad VARCHAR(50) NOT NULL,
-    codigo_postal INT UNSIGNED NOT NULL,
-    pais VARCHAR(50) NOT NULL,
-    PRIMARY KEY (addressId)
-);
-
 ALTER TABLE students
 	DROP direccion,
     DROP ciudad,
     DROP codigo_postal,
     DROP pais;
-    
-ALTER TABLE students
-	ADD addressId INT UNSIGNED,
-    ADD FOREIGN KEY (addressId) REFERENCES addresses(addressId);
+
+CREATE TABLE addresses
+(
+	addressId INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    direccion VARCHAR(100) NOT NULL,
+    ciudad VARCHAR(50) NOT NULL,
+    codigo_postal INT UNSIGNED NOT NULL,
+    pais VARCHAR(50) NOT NULL,
+    studentsId INT UNSIGNED NOT NULL,
+    FOREIGN KEY (studentsId) REFERENCES students(id)
+);

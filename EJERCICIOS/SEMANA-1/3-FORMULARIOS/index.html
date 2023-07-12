@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Formularios</title>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <main>
-            <h2>Formulario</h2>
-            <form action="#">
-                <fieldset>
-                    <legend>Datos Personales</legend>
+  <head>
+    <title>Formularios</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <h1>Formulario</h1>
+    </header>
 
-                    <label for="nombre">Nombre:</label><br>
-                    <input type="text" name="nombre" id="nombre" required autofocus><br>
+    <form action="#">
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <ul>
+          <li>
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" required autofocus />
+          </li>
+          <li>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required />
+          </li>
+          <li>
+            <label for="url">URL:</label>
+            <input
+              type="url"
+              name="url"
+              id="url"
+              placeholder="Esribe la URL de tu página web personal"
+            />
+          </li>
+        </ul>
+      </fieldset>
 
-                    <label for="correo-electronico">Correo:</label><br>
-                    <input type="email" name="correo" id="correo-electronico" required><br>
+      <fieldset>
+        <legend>Fecha y Tiempo</legend>
+        <ul>
+          <li>
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="fecha" id="fecha" />
+          </li>
+          <li>
+            <label for="tiempo">Tiempo:</label>
+            <input type="time" name="tiempo" id="tiempo" />
+          </li>
+          <li>
+            <label for="fecha-hora">Fecha y Hora:</label>
+            <input type="datetime-local" name="fecha-hora" id="fecha-hora" />
+          </li>
+          <li>
+            <label for="mes">Mes:</label>
+            <input type="month" name="mes" id="mes" />
+          </li>
+          <li>
+            <label for="semana">Semana:</label>
+            <input type="week" name="semana" id="semana" />
+          </li>
+        </ul>
+      </fieldset>
 
-                    <label for="url">Ingrese su URL:</label><br>
-                    <input type="url" name="url" id="url" placeholder="Esribe la URL de tu página web personal"><br>
-                </fieldset>
+      <fieldset>
+        <legend>Otros Datos de Interés</legend>
+        <ul>
+          <li>
+            <label for="numero">Número:</label>
+            <input type="number" name="numero" id="numero" min="-10" max="10" />
+          </li>
+          <li>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="telefono" id="telefono" />
+          </li>
+          <li>
+            <label for="busqueda">Término de busqueda:</label>
+            <input type="search" name="busqueda" id="busqueda" disabled />
+          </li>
+          <li>
+            <label for="color-favorito">Color favorito:</label>
+            <input type="color" name="color-favorito" id="color-favorito" />
+          </li>
+        </ul>
+      </fieldset>
 
-                <fieldset>
-                    <legend>Fecha y Tiempo</legend>
-
-                    <label for="fecha">Fecha:</label><br>
-                    <input type="date" name="fecha" id="fecha"><br>
-
-                    <label for="tiempo">Tiempo:</label><br>
-                    <input type="time" name="tiempo" id="tiempo"><br>
-
-                    <label for="fecha-y-hora">Fecha y Hora:</label><br>
-                    <input type="datetime-local" name="fecha-y-hora" id="fecha-y-hora"><br>
-
-                    <label for="mes">Mes:</label><br>
-                    <input type="month" name="mes" id="mes"><br>
-
-                    <label for="semana">Semana:</label><br>
-                    <input type="week" name="semana" id="semana"><br>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Otros Datos de Interés</legend>
-
-                    <label for="numero">Número:</label><br>
-                    <input type="number" name="numero" id="numero" min="-10" max="10"><br>
-
-                    <label for="telefono">Teléfono:</label><br>
-                    <input name="telefono"  value="+34" readonly>
-                    <input type="tel" name="telefono" id="telefono" ><br>
-
-                    <label for="termino-de-busqueda">Término de busqueda:</label><br>
-                    <input type="search" name="termino-de-busqueda" id="termino-de-busqueda" disabled><br>
-
-                    <label for="color-favorito">Color favorito:</label><br>
-                    <input type="color" name="color-favorito" id="color-favorito"><br>
-                </fieldset>
-                
-                <button type="submit">Enviar</button>
-            </form>
-        </main>
-    </body>
+      <button>Enviar</button>
+    </form>
+  </body>
 </html>

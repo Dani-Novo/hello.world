@@ -25,23 +25,25 @@ svg {
 
 /* Crea a partir de aquí tu CSS */
 
-.like {
-  animation-name: beat;
-  animation-duration: 300ms;
-  /* animation-fill-mode: forwards; */
-  animation-iteration-count: 2;
-  fill: red;
-  /* transition: fill 500ms; */
+svg.like {
+  animation: beat 300ms;
+  animation-fill-mode: forwards;
 }
 
 @keyframes beat {
-  0% {
-    transform: scale(1);
+  25% {
+    transform: scale(1.2);
   }
+
   50% {
-    transform: scale(1.5);
+    transform: scale(0.8);
   }
+
+  75% {
+    transform: scale(1.2);
+  }
+
   100% {
-    transform: scale(1);
+    fill: red;
   }
 }

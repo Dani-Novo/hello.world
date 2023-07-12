@@ -1,60 +1,75 @@
-*{
-    font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    color: white;
-    background-color: steelblue;
-    text-align: center;
-    max-width: 370px;
+/* Toda la página tiene una tipografía sin serifa. */
+body {
+  font-family: sans-serif;
 }
 
-main h2{
-    color: steelblue;
+/* La cabecera tiene color de fondo, y texto blanco y centrado. */
+header {
+  background-color: steelblue;
+  color: white;
+  text-align: center;
 }
 
-main li{
-    list-style: circle;
+h2 {
+  color: steelblue;
+  margin: 1.5rem 0;
 }
 
-.importante{
-    text-decoration: underline;
-    font-weight: 700;
+/*=============*\
+    L I S T A
+\*=============*/
+
+/* Las viñetas de la lista no son las que vienen por defecto. */
+ul {
+  list-style: circle inside;
+  margin-left: 1rem;
 }
 
-
-
-
-
-thead{
-    text-align: center;
-    background-color: steelblue;
-    color: white;
+/* Los objetos importantes de la lista están subrayados y en negrita. */
+.importante {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-td{
-    padding: 10px;
+/*=============*\
+    T A B L A
+\*=============*/
+
+td,
+th {
+  padding: 0.5rem;
 }
 
-thead th{
-    padding: 10px;
+/* La cabecera tiene un color de fondo y de texto diferente al resto. */
+thead {
+  background-color: rgb(67, 189, 255);
+  color: white;
 }
 
-tbody th{
-    padding: 10px;
-    background-color: rgb(128, 168, 241);
+/* Las filas pares tienen un color de fondo distinto a las impares. */
+
+tbody {
+  background-color: rgb(230, 246, 255);
 }
 
-tbody tr:nth-child(odd){
-    background-color: rgb(199, 215, 243);
+tbody tr:nth-child(even) {
+  background-color: rgb(128, 168, 241);
 }
 
-tbody tr:nth-child(even){
-    background-color: rgb(128, 168, 241);
+/* Los títulos de fila tienen un color de fondo con transparencia. */
+tbody th {
+  background-color: rgba(67, 189, 255, 0.247);
 }
 
-#descanso{
-    text-transform: uppercase;
-    font-weight: 700;
-    text-align: center;
+/* El texto de la fila de descanso está en mayúsculas, negrita y centrado. */
+#descanso {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 }

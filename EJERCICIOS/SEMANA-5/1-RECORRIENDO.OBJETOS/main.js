@@ -28,14 +28,14 @@ const people = {
   Alex: 10,
 };
 
-for (let person in people) {
-  peopleInformation(person, people[person]);
-}
-
 function peopleInformation(name, age) {
   if (age >= 18) {
     console.log(`${name} es mayor de edad`);
   } else {
     console.log(`${name} es menor de edad`);
   }
+}
+
+for (let person in people) {
+  peopleInformation(person, people[person]);
 }

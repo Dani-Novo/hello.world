@@ -26,68 +26,72 @@ Si se cumplen todas las comprobaciones, se mostrará un mensaje en consola indic
 
 Si alguna de las comprobaciones falla, lanzará un Error de JavaScript  que diga "Se ha producido un error:" y el mensaje correspondiente. Para esto tienes que usar throw y el objeto Error de JavaScript. */
 
+const letras = [
+  "T",
+  "R",
+  "W",
+  "A",
+  "G",
+  "M",
+  "Y",
+  "F",
+  "P",
+  "D",
+  "X",
+  "B",
+  "N",
+  "J",
+  "Z",
+  "S",
+  "Q",
+  "V",
+  "H",
+  "L",
+  "C",
+  "K",
+  "E",
+];
+
 function validateDNI(dni) {
-  // Comprobar la longitud total del DNI
-  if (dni.length !== 10) {
-    throw new Error(
-      "Se ha producio un error: La longitud del DNI es incorrecta"
-    );
+  try {
+    //Lo que se ha introducido es un String con 10 caracteres (los 8 números, el guión y la letra).
+    if (typeof dni !== "string" || dni.length !== 10) {
+      throw new Error("Formato incorrecto");
+    }
+
+    //Si separamos el String por el guión tendremos dos partes:
+    let partes = dni.split("-");
+
+    if (partes.length !== 2) {
+      throw new Error("Debe llevar un guion entre los números y la letra");
+    }
+
+    let [numeros, letra] = partes;
+
+    //La primera parte (antes del guion) debe tener 8 números.
+    if (numeros.length !== 8 || isNaN(numeros)) {
+      throw new Error("La primera parte deben ser 8 dígitos");
+    }
+
+    //La segunda parte (después del guion) debe ser un único caracter y no un número.
+    if (letra.length !== 1 || !isNaN(letra)) {
+      throw new Error("La segunda parte debe ser una letra");
+    }
+
+    //La letra (segunda parte) debe ser la correcta según el algoritmo explicado anteriormente.
+
+    let letraCorrectaIndex = numeros % 23;
+
+    let letraCorrecta = letras[letraCorrectaIndex];
+
+    if (letra.toUpperCase() !== letraCorrecta) {
+      throw new Error("La letra no coincide");
+    }
+
+    console.log("DNI válido");
+  } catch (error) {
+    console.error("Se ha producido un error: ", error.message);
   }
-
-  // Separar el número y la letra del DNI
-  let partes = dni.split("-");
-  let numero = partes[0];
-  let letra = partes[1];
-
-  // Comprobar la longitud de la primera parte del DNI
-  if (numero.length !== 8 || isNaN(parseInt(numero))) {
-    throw new Error(
-      "Se ha producio un error: La parte de los números del DNI debe tener 8 caracteres"
-    );
-  }
-
-  // Comprobar que la parte de la letra solo es un valor y no es un número
-  if (letra.length !== 1 || !isNaN(parseInt(letra))) {
-    throw new Error(
-      "Se ha producio un error: La parte de la letra deber ser un único valor y no un número"
-    );
-  }
-
-  // Obtener la letra correspondiente al número del DNI
-  let letrasDNI = [
-    "T",
-    "R",
-    "W",
-    "A",
-    "G",
-    "M",
-    "Y",
-    "F",
-    "P",
-    "D",
-    "X",
-    "B",
-    "N",
-    "J",
-    "Z",
-    "S",
-    "Q",
-    "V",
-    "H",
-    "L",
-    "C",
-    "K",
-    "E",
-  ];
-  let indice = parseInt(numero) % 23;
-  let letraCorrecta = letrasDNI[indice];
-
-  // Comprobar que la letra del DNI es correcta
-  if (letra.toUpperCase() !== letraCorrecta) {
-    throw new Error("Se ha producido un error: La letra del DNI no es válida");
-  }
-
-  console.log("El DNI es válido");
 }
 
 validateDNI("00000000-T");
