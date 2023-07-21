@@ -1,0 +1,15 @@
+{
+  "name": "1-agenda.en.la.linea.de.comandos",
+  "version": "1.0.0",
+  "description": "Crea un programa de node que te permita guardar fechas con descripciones de eventos:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+}
