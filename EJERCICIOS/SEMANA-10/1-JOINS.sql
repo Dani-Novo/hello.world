@@ -1,3 +1,11 @@
+/*
+Añade el código SQL necesario en la parte inferior del editor de la derecha para:
+
+    - seleccionar todos los datos de los estudiantes incluída toda la información de su dirección.
+
+    - selecionar el nombre, apellidos y email de los estudiantes de Indonesia
+*/
+
 	#	Preparación de la base de datos, no edites las siguientes líneas
 DROP DATABASE IF EXISTS bootcamp;
 CREATE DATABASE bootcamp;

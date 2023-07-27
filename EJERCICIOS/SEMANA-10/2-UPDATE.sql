@@ -1,5 +1,5 @@
 /*
-Modifica la tabla students (usando ALTER TABLE) para añadir una columna para su edad (age).
+Modifica la tabla "students" (usando "ALTER TABLE") para añadir una columna para su edad ("age").
 A continuación rellena esa columna para los 5 estudiantes que hay en la tabla con los valores que tu decidas.
 */
 
