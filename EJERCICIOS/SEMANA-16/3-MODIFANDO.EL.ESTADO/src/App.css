@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.App {
+  width: 300px;
+  padding: 20px;
+  background-color: slategrey;
+  border-radius: 15px;
+  box-shadow: 0 10px 8px rgba(58, 51, 51, 0.562);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.NewTask {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.NewTask input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.NewTask button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #22282e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
